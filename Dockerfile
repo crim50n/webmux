@@ -20,6 +20,7 @@ COPY requirements.txt /usr/src/app/
 
 # Install all prerequisites (build base used for gcc of some python modules)
 RUN apk add --no-cache build-base \
+ && apk add --no-cacke libffi-dev \
  && pip install --no-cache-dir -r requirements.txt \
  && apk del build-base
 
