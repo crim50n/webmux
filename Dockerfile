@@ -22,4 +22,4 @@ RUN apt-get -y install libffi-dev libssl-dev python-dev \
  && pip install --no-cache-dir -r requirements.txt \
 
 # Add the rest of the app code
-COPY . /usr/src/app
+#COPY . /usr/src/app
