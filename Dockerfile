@@ -20,7 +20,7 @@ COPY requirements.txt /usr/src/app/
 
 # Install all prerequisites (build base used for gcc of some python modules)
 RUN apk add --no-cache build-base
-RUN apk add --no-cache libffi-dev openssl-dev \
+RUN apk add --no-cache libffi-dev openssl-dev python-dev \
  && pip install --no-cache-dir -r requirements.txt \
  && apk del build-base
 
