@@ -18,7 +18,7 @@ COPY requirements.txt /usr/src/app/
 # Install all prerequisites (build base used for gcc of some python modules)
 RUN apt-get -y update
 RUN apt-get -y install build-essential
-RUN apt-get -y install libffi-dev openssl-dev python-dev \
+RUN apt-get -y install libffi-dev libssl-dev python-dev \
  && pip install --no-cache-dir -r requirements.txt \
 
 # Add the rest of the app code
