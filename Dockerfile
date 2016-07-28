@@ -6,9 +6,6 @@ EXPOSE 8080
 # Working directory for the application
 WORKDIR /usr/src/app
 
-# Set Entrypoint with hard-coded options
-#ENTRYPOINT ["python", "./runserver.py", "--host", "0.0.0.0"]
-
 # Set default options when container is run without any command line arguments
 CMD ./webmuxd
 
@@ -16,10 +13,10 @@ CMD ./webmuxd
 COPY requirements.txt /usr/src/app/
 
 # Install all prerequisites (build base used for gcc of some python modules)
-RUN apt-get -y update
-RUN apt-get -y install build-essential
-RUN apt-get -y install libffi-dev libssl-dev python-dev
-RUN pip install --no-cache-dir -r requirements.txt
+RUN apt-get -y update \
+  && apt-get -y install build-essential \
+  && apt-get -y install libffi-dev libssl-dev python-dev \
+  && pip install --no-cache-dir -r requirements.txt
 
 # Add the rest of the app code
 COPY . /usr/src/app
