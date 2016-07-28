@@ -1,4 +1,4 @@
-FROM python:2.7-wheeze
+FROM python:2.7-wheezy
 
 # Default port the webserver runs on
 EXPOSE 8080
